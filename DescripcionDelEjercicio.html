@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+ACTIVIDAD 4 (50%)
+Enunciado
+Realiza el siguiente ejercicio utilizando una única clase Java (Posicion) que sustituya a las clases Primero y Segundo. 
+El nombre de la clase principal será Actividad4 y el número de veces que se sacará por la consola las cadenas de caracteres “Primero” y “Segundo” será 15.
+
+// Hilos2.java
+public class Hilos2 {
+public static void main(String arg[]) {
+Thread p = new Thread(new Primero());
+Thread s = new Thread(new Segundo());
+p.start();
+s.start();
+System.out.println( "Fin programa ");
+}
+}
+// Primero.java
+public class Primero implements Runnable {
+public void run() {
+for (int i=1;i<100;i++)
+System.out.println( "Primero " + i );
+}
+}
+
+// Segundo.java
+public class Segundo implements Runnable {
+public void run() {
+for (int i=1;i<100;i++)
+System.out.println( "Segundo " + i );
+}
+}
+
+
+
+ 
+Solución
+// Actividad4.java
+public class Actividad4 {
+	
+	public static void main(String arg[]) {
+		
+		Thread p = new Thread(new Posicion("Primero"));
+		Thread s = new Thread(new Posicion("Segundo"));
+		p.start();
+		s.start();
+		System.out.println( "Fin programa ");
+	}
+}
+
+// Posicion.java
+
+public class Posicion implements Runnable {
+
+	String posicion;
+	
+	public Posicion (String pos) {
+		
+		posicion=pos;
+	}
+
+	public void run() {
+		for (int i=1;i<=15;i++)
+			System.out.println( posicion +" "+ i );
+		}
+
+}
+
+Resolución de problemas
+ 
+ACTIVIDAD 5 (50%)
+Enunciado
+Utiliza el método sleep de la clase Thread en las clases Primero y Segundo del siguiente programa, de acuerdo a los siguientes requerimientos:
+1.	En la clase Primero, modifica el bucle para que durante 15 repeticiones detenga la ejecución del hilo durante 100 milisegundos.
+2.	En la clase Segundo, modifica el bucle para que durante 15 repeticiones detenga la ejecución del hilo durante 0,2 segundos.
+El nombre de la clase principal será Actividad5.
+
+//Actividadx.java
+public class Actividadx {
+public static void main(String arg[]) {
+Primero p = new Primero();
+Segundo s = new Segundo();
+p.start();
+s.start();
+System.out.println("Fin programa");
+}
+}
+
+//Primero. java
+class Primero extends Thread  { 
+public void run() {
+for (int i=1;i<10;i++)
+{
+System.out.println( "Primero " + i );
+}
+}
+}
+
+//Segundo. java
+class Segundo extends Thread { 
+public void run() {
+for (int i=1;i<=10;i++)
+{
+System.out.println( "Segundo " + i );
+}
+}
+}
+
+ 
+Solución
+// Actividad5.java
+public class Actividad5 {
+	public static void main(String arg[]) {
+		Primero p = new Primero();
+		Segundo s = new Segundo();
+		p.start();
+		s.start();
+		System.out.println("Fin programa");
+	}
+}
+// Primero.java
+class Primero extends Thread  { 
+	public void run() {
+     		for (int i=1;i<=15;i++)
+     		{
+     			try {
+					sleep(100);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+       			System.out.println( "Primero " + i );
+     		}
+	}
+}
+// Segundo.java
+class Segundo extends Thread { 
+	public void run() {
+     		for (int i=1;i<=15;i++)
+     		{
+     			try {
+					sleep(200);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+    	 	System.out.println( "Segundo " + i );
+     		}
+	}
+	
+}
+Resolución de problemas
+
+
+ 
+REQUISITOS
+1.	Entregar cada actividad en un archivo comprimido que contenga los ficheros *.java empleados. 
+2.	Los archivos comprimidos seguirán la siguiente nomenclatura:
+UD2_Actividadn_apellido
+donde:
+	n: valdrá 4 ó 5, representando el número de la actividad
+	apellido: será el primer apellido del alumno	
+
+CRITERIOS DE CORRECCIÓN
+1.	Cumplimiento de los requisitos (15%).
+2.	Hacer lo que se indica en el enunciado (55%).
+3.	Claridad del código Java (15%).
+4.	Documentación del código Java (15%).
+5.	Explicación detallada de cómo se han resuelto problemas que hayan podido surgir en la realización de la actividad (hasta un 15% adicional sobre la nota obtenida). Dicha explicación se incluirá al principio de los archivos de código fuente Java mediante líneas de comentarios. La primera línea de comentarios sólo incluirá lo siguiente: // Resolución de problemas.
+6.	Variables no usadas (-15%).
+7.	Librerías no usadas (-15%).
+
+
+
+</body>
+</html>
