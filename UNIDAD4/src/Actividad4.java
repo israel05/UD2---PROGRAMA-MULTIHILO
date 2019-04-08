@@ -21,7 +21,7 @@ public class Actividad4 {
 		Thread p = new Thread(new Posicion("Primero"));
 		Thread s = new Thread(new Posicion("Segundo"));
 		p.start();
-		s.start(); //nada más
+		s.start(); //nada más y nada menos
 		System.out.println( "Fin programa ");
 	}
 }
