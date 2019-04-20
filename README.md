@@ -2,10 +2,10 @@
 Proyecto de adaptaci√≥n de los ejercicios de la asignatur de Ernesto desde la perspectiva de ENDE
 
 
-La asignatura de Ernesto usa JAVA como lenguaje de programaciÛn principal, desde ENDE pretendemos que las mejoras vistas
+La asignatura de Ernesto usa JAVA como lenguaje de programaci√≥n principal, desde ENDE pretendemos que las mejoras vistas
 desde la asingnatura sean implantadas en su curso
 - JUnit para pruebas
-- JavaDoc como documentaciÛn
+- JavaDoc como documentaci√≥n
 - GitHub como repositorio.
 
 Para demostrar la viabilidad del proyecto vamos a adaptar dos ejercicios con estas herramientas
